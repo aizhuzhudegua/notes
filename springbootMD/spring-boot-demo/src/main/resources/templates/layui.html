@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quick Start - Layui</title>
+    <!-- 这里的 href/src 都指向 resources 文件夹下面的 static 文件夹  -->
+    <link href="/static/layui/css/layui.css" rel="stylesheet">
+    <script src="/static/layui/layui.js"></script>
+</head>
+<body>
+
+<script>
+
+    layui.use(function () {
+        let layer = layui.layer;
+        layer.msg('Hello Layui', {icon: 6});
+    });
+
+</script>
+</body>
+</html>
