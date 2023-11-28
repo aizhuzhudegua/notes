@@ -1,1 +1,0 @@
-index.html ==> main.js ==> App.vue ==> components/xxx
