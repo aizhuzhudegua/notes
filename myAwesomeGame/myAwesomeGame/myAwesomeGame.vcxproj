@@ -127,7 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ComponentBase.cpp" />
     <ClCompile Include="myAwesomeGame.cpp" />
+    <ClCompile Include="TransformComponent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ComponentBase.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="TransformComponent.h" />
+    <ClInclude Include="Vector3.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="myAwesomeGame.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

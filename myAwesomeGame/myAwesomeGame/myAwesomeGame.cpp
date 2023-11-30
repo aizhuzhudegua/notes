@@ -2,10 +2,28 @@
 //
 
 #include <iostream>
+#include "Vector3.h"
 
+using namespace std;
+
+
+std::ostream& operator<<(std::ostream& out, const Vector3& v) //ostream在std中，没有展开std的话要声明所在域
+{
+
+    out << "(" << v.x << "," << v.y << "," << v.z << ")";
+    return out;
+}
+
+void testVector() {
+
+    Vector3 a(1, 2, 3);
+    Vector3 b(2, 1, 2);
+    Vector3 c = a + b;
+    cout << c;
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+    testVector();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
