@@ -128,11 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComponentBase.cpp" />
+    <ClCompile Include="GameObjectBase.cpp" />
+    <ClCompile Include="ModelComponent.cpp" />
     <ClCompile Include="myAwesomeGame.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComponentBase.h" />
+    <ClInclude Include="GameObjectBase.h" />
+    <ClInclude Include="ModelComponent.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Vector3.h" />

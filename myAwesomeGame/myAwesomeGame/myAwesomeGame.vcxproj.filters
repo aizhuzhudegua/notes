@@ -27,6 +27,15 @@
     <ClCompile Include="ComponentBase.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ModelComponent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TransformComponent.h">
@@ -40,6 +49,15 @@
     </ClInclude>
     <ClInclude Include="Vector3.h">
       <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelComponent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectBase.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
