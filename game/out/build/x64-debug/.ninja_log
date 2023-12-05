@@ -1,0 +1,6 @@
+# ninja log v5
+14	671	7233765819925973	game/CMakeFiles/game.dir/src/glad.c.obj	e3b75bf8ab78edbf
+2	421	7233734410427613	game/CMakeFiles/game.dir/game.cpp.obj	8fabf3804d37e810
+742	906	7233737705311505	game/game.exe	5f1101f56ac9bb01
+12	122	7233969614535384	build.ninja	b9a34f691f4538b9
+2	450	7233964379751846	game/CMakeFiles/game.dir/src/game.cpp.obj	368be2d3702b2e53
