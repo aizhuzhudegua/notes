@@ -1,13 +1,21 @@
-﻿# CMakeList.txt: game 的 CMake 项目，在此处包括源代码并定义
-# 项目特定的逻辑。
+﻿# 寻找vs自带的OpenGL
+find_package(OpenGL REQUIRED)
 
-#添加头文件搜索路径
-include_directories("include")
+# 设置静态库的搜索路径
+link_directories(lib)
+
+# 设置头文件的搜索路径
+include_directories(include)
+
+# 设置源文件的搜索路径
+aux_source_directory(src DIR_SRCS)
+
 # 将源代码添加到此项目的可执行文件。
-add_executable (game "src/game.cpp" "src/game.h" "include/glad/glad.h" "include/GLFW/glfw3.h" "include/GLFW/glfw3native.h" "include/KHR/khrplatform.h" "src/glad.c")
+add_executable (game ${DIR_SRCS})
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET game PROPERTY CXX_STANDARD 20)
-endif()
+# 链接
+target_link_libraries(game PRIVATE opengl32 glfw3)
 
-# TODO: 如有需要，请添加测试并安装目标。
+# 设置 C++ 标准
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)

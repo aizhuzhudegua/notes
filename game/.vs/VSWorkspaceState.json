@@ -16,8 +16,9 @@
     "\\game",
     "\\game\\include",
     "\\game\\include\\GLFW",
+    "\\game\\lib",
     "\\game\\src"
   ],
-  "SelectedNode": "\\game\\include\\GL",
+  "SelectedNode": "\\game\\src\\glad.c",
   "PreviewInSolutionExplorer": false
 }

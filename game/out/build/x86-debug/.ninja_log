@@ -1,0 +1,4 @@
+# ninja log v5
+2	295	7234839293518305	game/CMakeFiles/game.dir/src/game.cpp.obj	c7914662921d8df1
+4	329	7234840506240850	game/CMakeFiles/game.dir/src/glad.c.obj	90eb41216fb6ef24
+329	617	7234840508800866	game/game.exe	beee460ddb199b61
