@@ -98,3 +98,9 @@ git reset --hard <commit-hash>
 # 10、同步远程分支
 
 git checkout -b 本地分支 origin/远程分支
+
+# 11、获取最新的代码
+
+- git pull
+- 用于从远程仓库获取最新的代码并合并到你本地的当前分支中
+- 它实际上包含了两个操作：git fetch 和 git merge
