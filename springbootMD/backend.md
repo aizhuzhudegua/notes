@@ -129,7 +129,7 @@
 
 - File>Setting
 
-  ![maven](images\maven.png)
+  ![maven](images/maven.png)
 
   
 
@@ -137,41 +137,41 @@
 
 ## 1 以maven的方式创建
 
-![创建项目](images\创建项目.png)
+![创建项目](images/创建项目.png)
 
 - 创建完成后的项目结构（空项目）
 
-  ![项目目录](images\项目目录.png)
+  ![项目目录](images/项目目录.png)
 
 ## 2 使用MybatisX插件生成代码
 
 FIle>Setting>Plugins下载插件
 
-![mybatisx](images\mybatisx.png)
+![mybatisx](images/mybatisx.png)
 
 - 选择mysql数据库
 
-  ![mysql](images\mysql.png)
+  ![mysql](images/mysql.png)
 
 - 输入已有的数据库信息
 
-  ![db](images\db.png)
+  ![db](images/db.png)
 
 - 在数据库列表里选择要连接的表，生成代码
 
-  ![gen](images\gen.png)
+  ![gen](images/gen.png)
 
 - 按个人习惯更改enity目录名称
 
-  ![gen1](images\gen1.png)
+  ![gen1](images/gen1.png)
 
 - 点击下一步，如下设置
 
-  ![gen3](images\gen3.png)
+  ![gen3](images/gen3.png)
 
 - 生成后的目录
 
-  ![gen4](images\gen4.png)
+  ![gen4](images/gen4.png)
 
 ## 3 修改pom文件，配置依赖
 
@@ -257,15 +257,15 @@ FIle>Setting>Plugins下载插件
 
 - 修改完成后点击刷新，等待依赖下载完成
 
-  ![depends](images\depends.png)
+  ![depends](images/depends.png)
 
 ## 4 向前端提供访问接口
 
 - 在generator下新建包controller，在包下创建xxxController.class
 
-  ![image-20231116143250984](images\image-20231116143250984.png)
+  ![image-20231116143250984](images/image-20231116143250984.png)
 
-![image-20231116143435479](images\image-20231116143435479.png)
+![image-20231116143435479](images/image-20231116143435479.png)
 
 - 写一个Controller供前端请求
 
@@ -308,7 +308,7 @@ FIle>Setting>Plugins下载插件
 
 - 在service层实现getById
 
-  ![image-20231116202234700](images\image-20231116202234700.png)
+  ![image-20231116202234700](images/image-20231116202234700.png)
 
   BuildingsService接口的内容：
 
@@ -425,21 +425,21 @@ FIle>Setting>Plugins下载插件
 
   注意修改：
 
-  ![image-20231116203424484](images\image-20231116203424484.png)
+  ![image-20231116203424484](images/image-20231116203424484.png)
 
 - 最终项目目录
 
-  ![image-20231116203528843](images\image-20231116203528843.png)
+  ![image-20231116203528843](images/image-20231116203528843.png)
 
 # 三 测试接口
 
 ## 1 启动测试类
 
-![image-20231116203559296](images\image-20231116203559296.png)
+![image-20231116203559296](images/image-20231116203559296.png)
 
 ## 2 使用ApiFox工具测试接口
 
-![image-20231117094012581](images\image-20231117094012581.png)
+![image-20231117094012581](images/image-20231117094012581.png)
 
 # 四 写需求
 
@@ -477,7 +477,7 @@ public class DeviceController {
 
 ## 2 接口测试
 
-![image-20231117100347707](images\image-20231117100347707.png)
+![image-20231117100347707](images/image-20231117100347707.png)
 
 
 
