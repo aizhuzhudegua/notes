@@ -94,3 +94,7 @@ git reset --hard <commit-hash>
 # 9、递归下载子模块
 
 --recurse-submodules
+
+# 10、同步远程分支
+
+git checkout -b 本地分支 origin/远程分支
