@@ -77,6 +77,22 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 build cmake_object_order_depends_target_game: phony || game\CMakeFiles\game.dir
 
+build game\CMakeFiles\game.dir\src\Camera.cpp.obj: CXX_COMPILER__game_unscanned_Debug C$:\Users\王周凯\Desktop\知识仓库\game\game\src\Camera.cpp || cmake_object_order_depends_target_game
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
+  INCLUDES = -IC:\Users\王周凯\Desktop\知识仓库\game\game\include
+  OBJECT_DIR = game\CMakeFiles\game.dir
+  OBJECT_FILE_DIR = game\CMakeFiles\game.dir\src
+  TARGET_COMPILE_PDB = game\CMakeFiles\game.dir\
+  TARGET_PDB = game\game.pdb
+
+build game\CMakeFiles\game.dir\src\Shader.cpp.obj: CXX_COMPILER__game_unscanned_Debug C$:\Users\王周凯\Desktop\知识仓库\game\game\src\Shader.cpp || cmake_object_order_depends_target_game
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
+  INCLUDES = -IC:\Users\王周凯\Desktop\知识仓库\game\game\include
+  OBJECT_DIR = game\CMakeFiles\game.dir
+  OBJECT_FILE_DIR = game\CMakeFiles\game.dir\src
+  TARGET_COMPILE_PDB = game\CMakeFiles\game.dir\
+  TARGET_PDB = game\game.pdb
+
 build game\CMakeFiles\game.dir\src\game.cpp.obj: CXX_COMPILER__game_unscanned_Debug C$:\Users\王周凯\Desktop\知识仓库\game\game\src\game.cpp || cmake_object_order_depends_target_game
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   INCLUDES = -IC:\Users\王周凯\Desktop\知识仓库\game\game\include
@@ -101,7 +117,7 @@ build game\CMakeFiles\game.dir\src\glad.c.obj: C_COMPILER__game_unscanned_Debug 
 #############################################
 # Link the executable game\game.exe
 
-build game\game.exe: CXX_EXECUTABLE_LINKER__game_Debug game\CMakeFiles\game.dir\src\game.cpp.obj game\CMakeFiles\game.dir\src\glad.c.obj
+build game\game.exe: CXX_EXECUTABLE_LINKER__game_Debug game\CMakeFiles\game.dir\src\Camera.cpp.obj game\CMakeFiles\game.dir\src\Shader.cpp.obj game\CMakeFiles\game.dir\src\game.cpp.obj game\CMakeFiles\game.dir\src\glad.c.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = opengl32.lib  glfw3.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

@@ -1,4 +1,8 @@
 # ninja log v5
-2	295	7234839293518305	game/CMakeFiles/game.dir/src/game.cpp.obj	c7914662921d8df1
-4	329	7234840506240850	game/CMakeFiles/game.dir/src/glad.c.obj	90eb41216fb6ef24
-329	617	7234840508800866	game/game.exe	beee460ddb199b61
+2	520	7250247590707199	game/CMakeFiles/game.dir/src/game.cpp.obj	c7914662921d8df1
+11	287	7242641798908982	game/CMakeFiles/game.dir/src/glad.c.obj	90eb41216fb6ef24
+521	661	7250247591670388	game/game.exe	1b76b6e172383c33
+2	618	7243333442588182	game/CMakeFiles/game.dir/src/Shader.cpp.obj	ef46e53baf4f7ac
+9	265	7250224595495569	game/CMakeFiles/game.dir/src/Camera.cpp.obj	af17c800bc34baae
+12	819	7258672920304058	game/CMakeFiles/game.dir/src/game.cpp.obj	c7914662921d8df1
+820	1118	7258672922829861	game/game.exe	1b76b6e172383c33

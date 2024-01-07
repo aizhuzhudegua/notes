@@ -10,6 +10,7 @@ include_directories(include)
 # 设置源文件的搜索路径
 aux_source_directory(src DIR_SRCS)
 
+
 # 将源代码添加到此项目的可执行文件。
 add_executable (game ${DIR_SRCS})
 
