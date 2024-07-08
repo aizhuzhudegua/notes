@@ -79,23 +79,7 @@ string & append(const char *s);
 string & append(const char *s,int n); //把字符串s的前n个追加
 string & append(const string &s);
 string & append(const string &s,int pos,int n);//字符串pos开始的n个字符串
-
-//查找字符串
-//npos=-1
-int find(const string& str,int pos = 0) const; //从pos开始查找字符串str第一次出现的位置
-int find(const char * s,int pos = 0) const; //从pos开始查找字符串s第一次出现的位置
-int find(const char * s,int pos,int n) const; //从pos查找字符串s的前n个字符第一次出现的位置
-int find(const char c,int pos = 0) const; //查找字符c第一次出现的位置
-int rfind(const string& str,int pos = npos) const; //从pos开始查找字符串str最后一次出现的位置
-int rfind(const char * s,int pos = npos) const; //从pos开始查找字符串s最后一次出现的位置
-int rfind(const char * s,int pos,int n) const; //从pos查找字符串s的前n个字符最后一次出现的位置
-int rfind(const char c,int pos = 0) const; //查找字符c最后一次出现的位置
-//find从左往右找，rfind从右往左找，返回值不一定相同
-string& replace(int pos,int n,const string& str); //替换从pos开始的n个字符为str
-string& replace(int pos,int n,const char* str); //替换从pos开始的n个字符为str
-string str1 = "abcdefg";
-str1.replace(1,3,"1111");
-//a1111efg
+// push_back(s) append(s)
 
 //比较字符串
 int compare(const string &s) const;
@@ -112,9 +96,9 @@ string & insert(int pos,int n,char c);
 string & erase(int pos,int n=npos); //从pos开始删除n个字符
 string str = "hello";
 str.erase(1,3);
+// pop_back()
+// back()
 
-//子串
-string substr(int pos = 0,int n = npos) const;
 ```
 
 ###  unordered_map(不去重)
@@ -144,6 +128,27 @@ for (auto it = myMap.begin(); it != myMap.end(); it++) {
 // 删除
 myMap.erase("Alice"); // 删除键为"Alice"的键值对
 myMap.clear(); // 清空哈希表中所有的键值对
+```
+
+### queue
+
+```c++
+//push()：在队列尾部插入一个元素。
+//pop()：移除队列头部的元素。注意，如果队列为空，执行此操作将引发未定义行为。
+//front()：返回队列头部的元素，但不移除它。
+//back()：返回队列尾部的元素，但不移除它。
+//empty()：检查队列是否为空，如果为空则返回true，否则返回false。
+//size()：返回队列中的元素数量。
+```
+
+### stack
+
+```c++
+//empty()：//判断stack是否为空
+//size()：//stack的大小
+//top()：//栈顶元素
+//push()：//入栈
+//pop()：；//出栈
 ```
 
 
