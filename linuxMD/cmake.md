@@ -1,2 +1,23 @@
-install(TARGETS DigitalClock DESTINATION bin)
-install(FILES dist/linux/cpeditor.desktop DESTINATION share/applications)
+# 一、编译过程
+
+预处理 -> 编译 -> 汇编 -> 连接
+
+# 二、使用库文件 
+
+- 在linux系统下库文件分为静态库 .a 和动态库 .so，两种库都要搭配头文件申明使用
+- 静态库会被打包到可执行文件中去，动态库不会
+- 动态库中的数据被用到时才会加载到内存中去
+- 静态库更快
+- 动态库更节约内存，它是可以**共享**的，用于源程序**更多**的情况下
+- 动态库具有传递性：动态库 b 连接成功，a就可以使用b
+- 动态库就是把函数符号写入target
+- 库之间也能够相互连接
+
+由于动态库的传递性，因此在连接每个库时要加上访问权限PUBLIC、PRIVATE、INTERFACE
+
+- 其中在 INTERFACE后引入的库不会link到前面的target，只会导入函数，相当于提供接口
+- 其中PRIVATE 传递一次
+
+# 三、预定义宏
+
+![image-20240713091233536](images/image-20240713091233536.png)
