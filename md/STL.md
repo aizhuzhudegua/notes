@@ -40,7 +40,9 @@ for(vector<int>::iterator it = v.begin();v.begin()!=v.end();it++){
 void myPrint(int val){
     cout<<val<<endl;
 }
-
+// 取尾，去尾
+v.back();
+v.pop_back();
 
 #include<algorithm>
 for_each(v.begin(),v.end(),myPrint); #用到了回调的技术
@@ -99,6 +101,9 @@ str.erase(1,3);
 // pop_back()
 // back()
 
+// 子串
+返回由pos开始的n个字符组成的字符串
+string subStr = str.substr(1, 3);
 ```
 
 ###  unordered_map(不去重)
