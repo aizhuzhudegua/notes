@@ -156,8 +156,168 @@ myMap.clear(); // 清空哈希表中所有的键值对
 //pop()：；//出栈
 ```
 
+## priority_queue
+
+```c++
+#include <iostream>
+#include <queue>
+#include <algorithm>
+
+using namespace std;
+
+struct custom
+{
+    int a;
+    int b;
+    int c;
+    bool operator < (const custom& cust) const{
+        if (a == cust.a) {
+            if (b == cust.b) {
+                return c < cust.c; 
+            } else {
+                return b < cust.b; 
+            }
+        } else {
+            return a < cust.a; 
+        }
+    }
+};
+
+int main() {
+    priority_queue<custom> que;
+    que.push(custom{4, 2, 7});
+    que.push(custom{4, 2, 3});
+    que.push(custom{2, 3, 1});
+    que.push(custom{5, 6, 9});
+
+    while (!que.empty()) {
+        custom top = que.top();
+        cout << top.a <<  top.b <<  top.c << " "; 
+        que.pop();
+    }
+
+    cout << endl;
+    return 0;
+}
+
+```
+
 
 
 ## 算法
+
+```c++
+#include <algorithm>
+```
+
+## sort
+
+### 基本类型排序
+
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+
+    vector<int> v;
+    v.push_back(3);
+    v.push_back(1);
+    v.push_back(4);
+    v.push_back(3);
+
+    sort(v.begin(),v.end());
+
+    for(auto it = v.begin();it < v.end(); it ++)
+    {   
+        cout << *it << " ";
+    }
+    cout << endl;
+    return 0;
+}
+```
+
+### 自定义类型排序——自定义cmp（更灵活）
+
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+struct custom
+{
+    int a;
+    int b;
+    int c;
+};
+
+bool cmp (const custom& A,const custom& B)
+{
+    return A.a < B.a;
+}
+
+
+int main() {
+    vector<custom> v;
+    v.push_back(custom{3,2,7});
+    v.push_back(custom{4,1,3});
+    v.push_back(custom{2,3,1});
+    v.push_back(custom{5,6,9});
+
+    sort(v.begin(),v.end(),cmp);
+
+    for(auto it = v.begin();it < v.end(); it ++)
+    {   
+        cout << it->a << it->b << it->c << " ";
+    }
+    cout << endl;
+    return 0;
+}
+```
+
+### 自定义类型排序——重载运算符
+
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+struct custom
+{
+    int a;
+    int b;
+    int c;
+    bool operator < (const custom& c){
+        return b > c.b;
+    }
+
+};
+
+int main() {
+    vector<custom> v;
+    v.push_back(custom{3,2,7});
+    v.push_back(custom{4,1,3});
+    v.push_back(custom{2,3,1});
+    v.push_back(custom{5,6,9});
+
+    sort(v.begin(),v.end());
+
+    for(auto it = v.begin();it < v.end(); it ++)
+    {   
+        cout << it->a << it->b << it->c << " ";
+    }
+    cout << endl;
+    return 0;
+}
+```
+
+
 
 ## 迭代器：算法要通过迭代器访问容器
