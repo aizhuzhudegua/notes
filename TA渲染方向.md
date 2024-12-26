@@ -72,6 +72,10 @@ https://www.mathcha.io/wa
 [C#]: md\C#.md
 [unity中的c#]: md\unity中的c#.md
 
+# 骨骼动画
+
+[DynamicBone]: 骨骼动画\DynamicBone.md
+
 # Shader
 
 # 课程笔记
@@ -81,6 +85,8 @@ https://www.mathcha.io/wa
 [Kerry]: md\技术美术.md
 
 # 项目
+
+
 
 # 面试资料
 
