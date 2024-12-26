@@ -1,0 +1,554 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>3dgs</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ :root {--mermaid-font-zoom:1.75em ;} 
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="splatting算法" class="md-header-anchor"></a><span>Splatting算法</span></h1><p><img src="images/image-20240715202551950.png" referrerpolicy="no-referrer" alt="image-20240715202551950"></p><h1><a name="简化的参考代码" class="md-header-anchor"></a><span>简化的参考代码</span></h1><p><a href='https://github.com/SY-007-Research/3dgs_render_python' target='_blank' class='url'>https://github.com/SY-007-Research/3dgs_render_python</a></p><h1><a name="一捏雪球" class="md-header-anchor"></a><span>一、捏雪球</span></h1><h2><a name="高斯椭球" class="md-header-anchor"></a><span>高斯椭球</span></h2><p><span>均值就是球核</span></p><p><img src="images/image-20240715202722310.png" referrerpolicy="no-referrer" alt="image-20240715202722310"></p><h3><a name="为什么高斯是椭球" class="md-header-anchor"></a><span>为什么高斯是椭球</span></h3><p><img src="images/image-20240715203035649.png" referrerpolicy="no-referrer" alt="image-20240715203035649"></p><p><span>椭球是一个球面</span></p><p><img src="images/image-20240715203757446.png" referrerpolicy="no-referrer" alt="image-20240715203757446"></p><p><img src="images/image-20240715203812609.png" referrerpolicy="no-referrer" alt="image-20240715203812609"></p><p><img src="images/image-20240715203927302.png" referrerpolicy="no-referrer" alt="image-20240715203927302"></p><p><span>这部分是一个[0 , n ]的值，因此这里是一个椭球：</span></p><p><img src="images/image-20240715205310872.png" referrerpolicy="no-referrer" alt="image-20240715205310872"></p><p>&nbsp;</p><h3><a name="协方差矩阵" class="md-header-anchor"></a><span>协方差矩阵</span></h3><p><img src="images/image-20240715203216935.png" referrerpolicy="no-referrer" alt="image-20240715203216935"></p><h2><a name="各向同性和各向异性" class="md-header-anchor"></a><span>各向同性和各向异性</span></h2><p><img src="images/image-20240715204955458.png" referrerpolicy="no-referrer" alt="image-20240715204955458"></p><h2><a name="协方差矩阵如何控制椭球形状" class="md-header-anchor"></a><span>协方差矩阵如何控制椭球形状</span></h2><p><img src="images/image-20240715205625254.png" referrerpolicy="no-referrer" alt="image-20240715205625254"></p><p><img src="images/image-20240715210152527.png" referrerpolicy="no-referrer" alt="image-20240715210152527"></p><h3><a name="怎么求rs特征值分解" class="md-header-anchor"></a><span>怎么求RS：特征值分解</span></h3><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n172" cid="n172" mdtype="math_block"><div class="md-rawblock-container md-math-container" tabindex="-1"><div class="MathJax_SVG_Display"><span class="MathJax_SVG" id="MathJax-Element-3-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="93.268ex" height="6.78ex" viewBox="0 -956.9 40157.1 2919" role="img" focusable="false" style="vertical-align: -4.557ex; max-width: 100%;"><defs><path stroke-width="0" id="E4-MJMAIN-3A3" d="M666 247Q664 244 652 126T638 4V0H351Q131 0 95 0T57 5V6Q54 12 57 17L73 36Q89 54 121 90T182 159L305 299L56 644L55 658Q55 677 60 681Q63 683 351 683H638V679Q640 674 652 564T666 447V443H626V447Q618 505 604 543T559 605Q529 626 478 631T333 637H294H189L293 494Q314 465 345 422Q400 346 400 340Q400 338 399 337L154 57Q407 57 428 58Q476 60 508 68T551 83T575 103Q595 125 608 162T624 225L626 251H666V247Z"></path><path stroke-width="0" id="E4-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="0" id="E4-MJMATHI-51" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path><path stroke-width="0" id="E4-MJMAIN-2227" d="M318 591Q325 598 333 598Q344 598 348 591Q349 590 414 445T545 151T611 -4Q609 -22 591 -22Q588 -22 586 -21T581 -20T577 -17T575 -13T572 -9T570 -4L333 528L96 -4Q87 -20 80 -21Q78 -22 75 -22Q57 -22 55 -4Q55 2 120 150T251 444T318 591Z"></path><path stroke-width="0" id="E4-MJMATHI-54" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path stroke-width="0" id="E4-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E4-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g transform="translate(17405,0)"><use xlink:href="#E4-MJMAIN-3A3" x="0" y="0"></use><use xlink:href="#E4-MJMAIN-3D" x="999" y="0"></use><use xlink:href="#E4-MJMATHI-51" x="2055" y="0"></use><use xlink:href="#E4-MJMAIN-2227" x="3068" y="0"></use><g transform="translate(3958,0)"><use xlink:href="#E4-MJMATHI-51" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E4-MJMATHI-54" x="1118" y="583"></use></g></g><g transform="translate(16361,-1707)"><use xlink:href="#E4-MJMAIN-3A3" x="0" y="0"></use><use xlink:href="#E4-MJMAIN-3D" x="999" y="0"></use><use xlink:href="#E4-MJMATHI-51" x="2055" y="0"></use><g transform="translate(3068,0)"><use xlink:href="#E4-MJMAIN-2227" x="0" y="0"></use><g transform="translate(667,418)"><g transform="translate(120,0)"><rect stroke="none" width="370" height="60" x="0" y="146"></rect><use transform="scale(0.5)" xlink:href="#E4-MJMAIN-31" x="119" y="662"></use><use transform="scale(0.5)" xlink:href="#E4-MJMAIN-32" x="119" y="-621"></use></g></g></g><g transform="translate(4668,0)"><use xlink:href="#E4-MJMAIN-2227" x="0" y="0"></use><g transform="translate(667,418)"><g transform="translate(120,0)"><rect stroke="none" width="370" height="60" x="0" y="146"></rect><use transform="scale(0.5)" xlink:href="#E4-MJMAIN-31" x="119" y="662"></use><use transform="scale(0.5)" xlink:href="#E4-MJMAIN-32" x="119" y="-621"></use></g></g></g><g transform="translate(6045,0)"><use xlink:href="#E4-MJMATHI-51" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E4-MJMATHI-54" x="1118" y="583"></use></g></g></g></svg></span></div><script type="math/tex; mode=display" id="MathJax-Element-3">\Sigma=Q\land Q^T \\
+\Sigma=Q\land^\frac{1}{2} \land^\frac{1}{2} Q^T</script></div></div><h3><a name="没有使用四元数根据rs求协方差矩阵" class="md-header-anchor"></a><span>没有使用四元数，根据RS求协方差矩阵</span></h3><p><span>mod默认是1，应该是对缩放做一个系数</span></p><p><img src="images/image-20240715213113731.png" referrerpolicy="no-referrer" alt="image-20240715213113731"></p><h1><a name="二抛雪球" class="md-header-anchor"></a><span>二、抛雪球</span></h1><p><span>就是光栅化，nerf使用的是逆光栅化，应该和ray tracing是差不多的</span></p><p><img src="images/image-20240715215157256.png" referrerpolicy="no-referrer" alt="image-20240715215157256"></p><h2><a name="观测变换" class="md-header-anchor"></a><span>观测变换</span></h2><p><span>世界坐标系 =&gt; 相机坐标系，即MVP中的V</span></p><p><img src="images/image-20240715215436523.png" referrerpolicy="no-referrer" alt="image-20240715215436523"></p><h2><a name="投影变换" class="md-header-anchor"></a><span>投影变换</span></h2><p><img src="images/image-20240715215607272.png" referrerpolicy="no-referrer" alt="image-20240715215607272"></p><p><img src="images/image-20240715215753760.png" referrerpolicy="no-referrer" alt="image-20240715215753760"></p><p><img src="images/image-20240715215910541.png" referrerpolicy="no-referrer" alt="image-20240715215910541"></p><h2><a name="视口变换" class="md-header-anchor"></a><span>视口变换</span></h2><p><img src="images/image-20240715220626608.png" referrerpolicy="no-referrer" alt="image-20240715220626608"></p><h2><a name="光栅化" class="md-header-anchor"></a><span>光栅化</span></h2><p><img src="images/image-20240715220802120.png" referrerpolicy="no-referrer" alt="image-20240715220802120"></p><p><img src="images/image-20240715221114942.png" referrerpolicy="no-referrer" alt="image-20240715221114942"></p><h2><a name="高斯球的观测变换" class="md-header-anchor"></a><span>高斯球的观测变换</span></h2><p><img src="images/image-20240715221315106.png" referrerpolicy="no-referrer" alt="image-20240715221315106"></p><h2><a name="高斯球的投影变换" class="md-header-anchor"></a><span>高斯球的投影变换</span></h2><p><img src="images/image-20240715221536447.png" referrerpolicy="no-referrer" alt="image-20240715221536447"></p><ul><li><span>由于透视投影是非线性的，可能会引起协方差矩阵的形变，所以引入雅可比矩阵（极小的区域是线性的）</span></li><li><span>EWA splatting这篇文章有说明，因为投影变换不能保证3d高斯到像素平面还是高斯的，但是线性化了之后可以保证3d高斯投影后就是一个2d高斯</span></li></ul><h2><a name="雅可比矩阵" class="md-header-anchor"></a><span>雅可比矩阵</span></h2><p><img src="images/image-20240715221735617.png" referrerpolicy="no-referrer" alt="image-20240715221735617"></p><p><img src="images/image-20240715222225799.png" referrerpolicy="no-referrer" alt="image-20240715222225799"></p><h2><a name="3dgs的投影变换" class="md-header-anchor"></a><span>3dgs的投影变换</span></h2><p><span>这里的雅可比矩阵是根据</span><strong><span>投影转正交矩阵</span></strong><span>得到的</span></p><p><img src="images/image-20240716133918234.png" referrerpolicy="no-referrer" alt="image-20240716133918234"></p><p><img src="images/image-20240716135335454.png" referrerpolicy="no-referrer" alt="image-20240716135335454"></p><p><img src="images/image-20240716135747300.png" referrerpolicy="no-referrer" alt="image-20240716135747300"></p><h2><a name="投影变换后" class="md-header-anchor"></a><span>投影变换后</span></h2><p><img src="images/image-20240716134430392.png" referrerpolicy="no-referrer" alt="image-20240716134430392"></p><h2><a name="3dgs的视口变换" class="md-header-anchor"></a><span>3dgs的视口变换</span></h2><p><img src="images/image-20240716140633357.png" referrerpolicy="no-referrer" alt="image-20240716140633357"></p><h2><a name="3dgs中心变换" class="md-header-anchor"></a><span>3dgs中心变换</span></h2><ul><li><span>projmatrix已经做了观测变换</span></li><li><span>p_proj做了归一化，这个点位于[-1,1]^3立方体（NDC空间）</span></li><li><span>point_image做了视口变换</span></li></ul><p><img src="images/image-20240716141016801.png" referrerpolicy="no-referrer" alt="image-20240716141016801"></p><ul><li><span>这里第一行与x相关使用focalx，第二行与y相关使用focaly，由于投影之后不考虑z方向，所以最后一行为0</span></li><li><span>viewmatrix[:3,:3]取了一个3*3的矩阵，【旋转 缩放】矩阵</span></li><li><span>在球核做雅可比，用它的局部线性做为仿射变换</span></li><li><span>高斯分布进行仿射变换时，需要左右同乘【旋转 缩放】矩阵；在透视投影到正交投影的变换过程中， 雅可比矩阵扮演了这个【旋转 缩放】矩阵的角色</span></li></ul><p><img src="images/image-20240716141211052.png" referrerpolicy="no-referrer" alt="image-20240716141211052"></p><h1><a name="三雪球颜色" class="md-header-anchor"></a><span>三、雪球颜色</span></h1><h2><a name="球谐函数" class="md-header-anchor"></a><span>球谐函数</span></h2><ul><li><span>注意他和球无关，他表达的是各个方向上是什么颜色（颜色空间）</span></li><li><span>球谐函数用到3阶（0~3）</span></li></ul><p><img src="images/image-20240718102332322.png" referrerpolicy="no-referrer" alt="image-20240718102332322"></p><ul><li><span>一共是16个系数c,c是三维的，所以sh就是一个16*3的矩阵</span></li></ul><p><img src="images/image-20240718105235952.png" referrerpolicy="no-referrer" alt="image-20240718105235952"></p><ul><li><p><span>sh是16x3的矩阵，每一行都是1x3的颜色值，对应公式中的:</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n246" cid="n246" mdtype="math_block"><div class="md-rawblock-container md-math-container" tabindex="-1"><div class="MathJax_SVG_Display" style="text-align: center;"><span class="MathJax_SVG" id="MathJax-Element-4-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.798ex" height="3.044ex" viewBox="0 -906.7 3788.2 1310.7" role="img" focusable="false" style="vertical-align: -0.938ex; max-width: 100%;"><defs><path stroke-width="0" id="E5-MJMATHI-43" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path stroke-width="0" id="E5-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E5-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path stroke-width="0" id="E5-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E5-MJMATHI-43" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-30" x="1093" y="509"></use><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-30" x="1011" y="-434"></use><use xlink:href="#E5-MJMAIN-2E" x="1227" y="0"></use><use xlink:href="#E5-MJMAIN-2E" x="1671" y="0"></use><use xlink:href="#E5-MJMAIN-2E" x="2116" y="0"></use><g transform="translate(2561,0)"><use xlink:href="#E5-MJMATHI-43" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-33" x="1093" y="509"></use><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-33" x="1011" y="-433"></use></g></g></svg></span></div><script type="math/tex; mode=display" id="MathJax-Element-4">C^0_0...C^3_3</script></div></div></li><li><p><span>SH_C0...SH_C3对应公式中的y</span></p></li><li><p><span>在这里相机的位置就是球心，连接高斯球核得到一个方向，r被归一化为1</span></p></li></ul><h1><a name="疑问这里只表达了高斯椭球核的颜色吗我觉得是" class="md-header-anchor"></a><span>疑问：这里只表达了高斯椭球核的颜色吗？我觉得是</span></h1><p><img src="images/image-20240718110634802.png" referrerpolicy="no-referrer" alt="image-20240718110634802"></p><p><img src="images/image-20240718111452129.png" referrerpolicy="no-referrer" alt="image-20240718111452129"></p><p><img src="images/image-20240718111648893.png" referrerpolicy="no-referrer" alt="image-20240718111648893"></p><h2><a name="合成图片" class="md-header-anchor"></a><span>合成图片</span></h2><h3><a name="alpha混合" class="md-header-anchor"></a><span>alpha混合</span></h3><p><span>将每一个高斯的足迹图混合，3dgs用的是逐像素的求颜色，就要用到nerf的体渲染公式</span></p><p><img src="images/image-20240718111955028.png" referrerpolicy="no-referrer" alt="image-20240718111955028"></p><ul><li><span>C是足迹图中记录的</span></li><li><span>概率密度已知</span></li></ul><h1><a name="疑问概率密度如何求得" class="md-header-anchor"></a><span>疑问：概率密度如何求得？</span></h1><ul><li><span>求T</span></li></ul><p><img src="images/image-20240718112253604.png" referrerpolicy="no-referrer" alt="image-20240718112253604"></p><h2><a name="体渲染" class="md-header-anchor"></a><span>体渲染</span></h2><p><img src="images/image-20240718112602172.png" referrerpolicy="no-referrer" alt="image-20240718112602172"></p><ul><li><span>T是在s处没有被阻挡的概率，sigma是在s处被阻挡的概率密度函数</span></li></ul><p><img src="images/image-20240718113124809.png" referrerpolicy="no-referrer" alt="image-20240718113124809"></p><ul><li><span>sigma和C都是已知的</span></li></ul><p><img src="images/image-20240719154309003.png" referrerpolicy="no-referrer" alt="image-20240719154309003"></p><p><img src="images/image-20240719154525589.png" referrerpolicy="no-referrer" alt="image-20240719154525589"></p><p><img src="images/image-20240719154755143.png" referrerpolicy="no-referrer" alt="image-20240719154755143"></p><h2><a name="3dgs快在哪" class="md-header-anchor"></a><span>3dgs快在哪</span></h2><p><img src="images/image-20240719160239624.png" referrerpolicy="no-referrer" alt="image-20240719160239624"></p><h2><a name="渲染代码" class="md-header-anchor"></a><span>渲染代码</span></h2><p><img src="images/image-20240719160427980.png" referrerpolicy="no-referrer" alt="image-20240719160427980"></p><h1><a name="四参数评估" class="md-header-anchor"></a><span>四、参数评估</span></h1><p><img src="images/image-20240719162027491.png" referrerpolicy="no-referrer" alt="image-20240719162027491"></p><ul><li><span>knn为的是铺满整个画面</span></li></ul><p><img src="images/image-20240719162450566.png" referrerpolicy="no-referrer" alt="image-20240719162450566"></p><p><img src="images/image-20240719162648894.png" referrerpolicy="no-referrer" alt="image-20240719162648894"></p></div>
+</body>
+</html>
